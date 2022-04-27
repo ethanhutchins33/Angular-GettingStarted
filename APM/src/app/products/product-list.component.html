@@ -1,14 +1,14 @@
 <div class="card">
-    <div class="card-header" style="text-align:center">
+    <div class="card-header"
+         style="text-align:center">
         {{pageTitle}}
     </div>
     <div class="card-body">
         <div class="row">
             <div class="col-md-2">Filter By:</div>
             <div class="col-md-2">
-                <input type="text" 
-                    [(ngModel)]='listFilter'
-                />
+                <input type="text"
+                       [(ngModel)]='listFilter' />
             </div>
         </div>
         <div class="row">
@@ -17,12 +17,13 @@
             </div>
         </div>
         <div class="table-responsive">
-            <table class="table" *ngIf = 'products.length'>
+            <table class="table"
+                   *ngIf='products.length'>
                 <thead>
                     <tr>
                         <th>
                             <button class="btn btn-primary"
-                                (click)="toggleImage()">
+                                    (click)="toggleImage()">
                                 {{showImage ? 'Hide' : 'Show'}} Image
                             </button>
                         </th>
@@ -34,13 +35,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor = 'let product of products'>
+                    <tr *ngFor='let product of products'>
                         <td>
-                            <img *ngIf='showImage' 
-                                [src]="product.imageUrl" 
-                                [title]="product.productName" 
-                                [style.width.px]="imageWidth"
-                                [style.margin.px]="imageMargin">
+                            <img *ngIf='showImage'
+                                 [src]="product.imageUrl"
+                                 [title]="product.productName"
+                                 [style.width.px]="imageWidth"
+                                 [style.margin.px]="imageMargin">
                         </td>
                         <td>{{product.productName}}</td>
                         <td>{{product.productCode | lowercase}}</td>
